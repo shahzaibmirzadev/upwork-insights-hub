@@ -34,11 +34,12 @@ const ReactionBar = ({ reactions: initial }: { reactions: ReactionCounts }) => {
         <motion.button
           key={key}
           whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
           onClick={() => toggle(key)}
-          className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+          className={`glass-card flex items-center gap-1.5 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 ${
             reacted.has(key)
-              ? "border-primary bg-primary/10 text-primary"
-              : "border-border text-muted-foreground hover:border-primary/40"
+              ? "!border-primary !bg-primary/15 text-primary glow-sm"
+              : "text-muted-foreground hover:text-foreground"
           }`}
           aria-label={label}
         >
